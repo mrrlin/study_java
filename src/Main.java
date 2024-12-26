@@ -3,10 +3,12 @@ public class Main {
         System.out.println("Система рассчета стоимости топлива");
 
         int fuelType = 92;
-        int amount = 50;
+        int amount = 550;
 
         double fuel92Price = 60.2;
         double fuel95Price = 67.33;
+
+        int maxAmount = 400;
 
         double fuelPrice = 0;
 
@@ -23,12 +25,15 @@ public class Main {
             amount = 0;
         }
 
+        if (amount > maxAmount) {
+            System.out.println("Указанное количество топлива превышает максимально допустимое");
+            amount = 0;
+        }
+
         System.out.println("Цена выбранного топлива: " + fuelPrice + " руб.");
 
         double totalPrice = fuelPrice * amount;
 
         System.out.println("Общая стоимость заправки: " + totalPrice + " руб.");
-
-        System.out.println(fuelType);
     }
 }
